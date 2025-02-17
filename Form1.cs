@@ -19,7 +19,30 @@ namespace bai8_Pheptinhcoban
 
         private void lblTinh_Click(object sender, EventArgs e)
         {
-
+            double So1 = double.Parse(txtSo1.Text);
+            double So2 = double.Parse(txtSo2.Text);
+            if (rdbCong.Checked)
+            {
+                txtKQ.Text = (So1 + So2).ToString();
+            }
+            if (rdbTru.Checked)
+            {
+                txtKQ.Text = (So1 - So2).ToString();
+            }
+            if (rdbNhan.Checked)
+            {
+                txtKQ.Text = (So1 * So2).ToString();
+            }
+            if (rdbChia.Checked)
+                if (So2 == 0)
+                {
+                    txtKQ.Text = " Lỗi chia 0: ";
+                }
+                else
+                {
+                    txtKQ.Text = (So1 / So2).ToString();
+                }
         }
     }
 }
+        
